@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    *{
+        margin: auto;
+        background-color: black;
+    }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:black;
+  position: relative;
+  z-index: 1;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: black;
+}
+
+.active {
+  background-color: rgb(190, 64, 85);
+}
+    .next {
+      right: 0;
+    }
+    
+
+    .slider-container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .slider {
+      display: flex;
+      height: 100%;
+      transition: transform 0.5s ease;
+    }
+
+    .slide {
+      flex: 0 0 100%;
+    }
+
+    .imm {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      margin: 0;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px;
+      border: none;
+      outline: none;
+      z-index: 1;
+    }
+
+    .prev {
+      left: 0;
+    }
+
+    .next {
+      right: 0;
+    }
+    .text {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 30px;
+      font-weight: bold;
+      text-align: top;
+      /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+    }
+    .container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 40vh;
+      margin-bottom: 100px;
+    }
+
+    .circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ccc;
+    }
+
+    .circle img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+h6{
+  color: white;
+}
+h2{
+  color: white;
+  background-color: rgb(167, 29, 52);
+  padding: 4px 3px;
+  text-align: center;
+}
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.icon {
+  padding: 10px;
+  background:white;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  color: white;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+.white{
+  color:lightslategray;
+  text-align: center;
+}
+h3{
+  text-align: center;
+  color: white;
+}
+.margin{
+  margin-bottom: 150px;
+    background-size: cover; 
+    background-position: center;
+    
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+  <li><a href="#Snapshots">Snapshots</a></li>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><img src="images/tata-logo-tata-icon-free-free-vector.jpg" alt="" style="height: 43px; padding: 3px 230px;"></li>
+  <li><img src="images/download.jpeg" alt="" style="height: 43px; padding: 12px 135px;"></li>
+</ul><br>
+<div class="slider-container" id="#home">
+  <div class="slider">
+    <div class="slide"><img src="images/ai 3.jpeg" class="imm" alt="Image 1">
+      <div class="text">The    future    of    AI.    The    future    is    human</div></div>
+    <div class="slide"><img src="images/the new bench mark.avif" class="imm" alt="Image 2">
+      <div class="text">Make net-negative the new benchmark</div></div>
+    <div class="slide"><img src="images/cloud-technology.jpg" class="imm" alt="Image 3">
+      <div class="text">Frictionless customer service journeys with BaNCS<sup>TM</sup></div></div>
+    <div class="slide"><img src="images/potential.jpg" class="imm" alt="Image 3">
+      <div class="text">Unlock the full potential of your bussiness</div></div>
+    <div class="slide"><img src="images/ecosysytem.jpeg" class="imm" alt="Image 3">
+      <div class="text">Ecosystem for mobility</div></div>
+  </div>
+  <button class="prev" onclick="prevSlide()">Previous</button>
+  <button class="next" onclick="nextSlide()">Next</button>
+</div><br>
+<br><br><br><br><br><br><br><br>
+<div id="Snapshots"><h1 style="color: white;">Snapshots</h1></div>
+<div class="container">
+  <div class="circle"><img src="images/mete verse.jpg" alt="Image 1"></div>
+  <h6>Don't make it meta worse</h6>
+  <div class="circle"><img src="images/cloud-technology.jpg" alt="Image 2"></div>
+  <h6>Connected numbers</h6>
+  <div class="circle"><img src="images/intelligent insurance.jpg" alt="Image 3"></div>
+  <h6>La La LLM!</h6>
+  <div class="circle"><img src="images/bussiness balance.jpg" alt="Image 4"></div>
+  <h6>26.2 Miles of Building on Belief</h6>
+  <div class="circle"><img src="images/ll llm.webp" alt="Image 5"></div>
+  <h6>Intelligent insurance</h6>
+</div>
+
+<script>
+  let slideIndex = 0;
+
+  function showSlide() {
+    const slides = document.querySelectorAll('.slide');
+    if (slideIndex >= slides.length) { slideIndex = 0; }
+    if (slideIndex < 0) { slideIndex = slides.length - 1; }
+    slides.forEach(slide => slide.style.transform = `translateX(-${slideIndex * 100}%)`);
+  }
+
+  function nextSlide() {
+    slideIndex++;
+    showSlide();
+  }
+
+  function prevSlide() {
+    slideIndex--;
+    showSlide();
+  }
+
+  showSlide();
+</script>
+<div class="margin" id="about">
+  <ul><h1 class="white">Industries</h1>
+  <h3>Banking</h3>
+  <h3>Capital Markets</h3>
+  <h3>Consumer Goods and Distribution</h3>
+ <h3> Communications, Media, and Information Services</h3>
+ <h3> Education</h3>
+  <h3>Energy, Resources, and Utilities</h3>
+  <h3>Healthcare</h3>
+  <h3>High Tech</h3>
+  <h3>Insurance</h3>
+  <h3>Life Sciences</h3>
+ <h3> Manufacturing</h3>
+  <h3>Public Services</h3>
+  <h3>Retail</h3>
+  <h3> Travel and Logistics</h3></ul>
+</div>
+<div>
+  <div>
+    <h2 style="color: white;">We build greater futures through innovation and collective knowledge.</h2>
+<img src="images/build.jpeg" alt="Image 1" style="height: 400px; width: 65%; margin-left: 220px;"></div>
+</div>
+<div>
+  <h2 style="color: white;">Visit TCS</h2>
+<img src="images/visit.jpg" alt="Image 1" style="height: 400px; width: 65%; margin-left: 220px;"></div>
+</div>
+<footer>
+  <div class="footer-wrappper footer-bg">
+     <!-- Footer Start-->
+     <div class="footer-area footer-padding">
+         <div class="container">
+             <div class="row justify-content-between">
+                 <div class="col-xl-4 col-lg-5 col-md-4 col-sm-6">
+                     <div class="single-footer-caption mb-50">
+                         <div class="single-footer-caption mb-30">
+
+                         </div>
+                     </div>
+                 </div>
+                 
+                  
+                    <footer>
+                    <li><img src="images/icons1-removebg-preview.png" alt="" style="height: 200px; padding: 12px 50px;margin-left: -550px;"></li>
+                    <br> 
+                    <br>
+                    <br><br><br>
+                    <form action="/action_page.php" style="max-width:500px;margin:auto">
+                      <h2 id="contact">Register Form</h2><br><br>
+                      <div class="input-container">
+                        <input class="input-field" type="text" placeholder="Username" name="usrnm">
+                      </div>
+                    
+                      <div class="input-container">
+                        <input class="input-field" type="text" placeholder="Email" name="email">
+                      </div>
+                      
+                      <div class="input-container">
+                        <input class="input-field" type="password" placeholder="Password" name="psw">
+                      </div>
+                    
+                      <button type="submit" class="btn">Register</button>
+                    </form>
+                     
+             <p style="color: white;text-align: center;margin-top: 150px;">©2024 TATA Consultancy Services Limited</p>
+             <p style="color: white;margin-top: 10px;">Privacy NoticeCookie PolicyDisclaimerSecurity PolicyCalifornia Notice at CollectionCustomize cookie</p>
+                </footer>
+
+
+</body>
+</html>
+
+
